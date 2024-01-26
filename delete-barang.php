@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<html>
+<?php
 
-<head>
-    <title>Barang</title>
-</head>
+require "koneksi.php";
 
-<body>
-    <?php include "menu.php"; ?>
+session_start();
 
-    <?php
+if ($_SESSION["level"] != "admin" && $_SESSION["level"] != "logistik") {
+    // jika di sesi ini levelnya bukan admin atau bukan logistik, akses ditolak
+    echo "Anda tidak dapat menghapus barang";
+    exit;
+}
 
-    // halaman ini boleh diakses oleh semua level //
-    require "koneksi.php";
+// id diambil dari tombol Hapus yang ditekan di barang.php
+$id = $_POST["id"];
 
-    // cari semua barang dari database
-    $sql = "SELECT * FROM barang";
-    $query = mysqli_query($koneksi, $sql);
-    ?>
+$sql = "DELETE FROM barang WHERE id = '$id'";
+mysqli_query($koneksi, $sql);
 
-</body>
-
-</html>
+if (mysqli_error($koneksi)) {
+    echo mysqli_error($koneksi);
+} else {
+    header("location: barang.php");
+}
