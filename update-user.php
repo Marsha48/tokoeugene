@@ -9,19 +9,14 @@ if ($_POST["id"] == $_SESSION["id"]) {
     exit;
 }
 
-// id, username, password, dan level diambil dari read-user.php
 $id = $_POST["id"];
 $username = $_POST["username"];
 $level = $_POST["level"];
 
-// password diisi dulu dengan password sebelumnya
 $password = $_POST["old_password"];
 
-// hapus (trim) karakter spasi dari password baru
 $new_password = trim($_POST["password"]);
 if (strlen($new_password) > 0) {
-    // jika password baru tidak kosong, password di-encrypt
-    //lalu menimpa password sebelumnya
     $password = password_hash($new_password, PASSWORD_DEFAULT);
 }
 

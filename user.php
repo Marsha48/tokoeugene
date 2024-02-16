@@ -10,14 +10,12 @@
 
     <?php
     if ($_SESSION["level"] != "admin") {
-        // jika di sesi ini levelnya bukan admin, akses ditolak
         echo "Anda tidak dapat mengakses halaman ini";
         exit;
     }
 
     require "koneksi.php";
 
-    // cari semua user dari database
     $sql = "SELECT * FROM user";
     $query = mysqli_query($koneksi, $sql);
     ?>
@@ -36,7 +34,6 @@
                 <th>Diubah pada</th>
                 <th colspan="2">Aksi</th>
             </tr>
-            <!-- ambil (fetch) data user satu per satu, lalu tampilkan -->
             <?php $i = 1; ?>
             <?php while ($user = mysqli_fetch_array($query)) : ?>
                 <tr>
@@ -64,7 +61,6 @@
     </div>
 </body>
 <script>
-    // tampilkan konfirmasi sebelum hapus //
     function konfirmasi(from) {
         FormData = new FormData(from);
         id = FormData.get("id");

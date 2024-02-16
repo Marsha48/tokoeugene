@@ -2,7 +2,6 @@
 
 require "koneksi.php";
 
-// id, nama, kategori, stok, harga_jual, harga_beli diambil dari read-barang.php
 $id = $_POST["id"];
 $nama = $_POST["nama"];
 $kategori = $_POST["kategori"];

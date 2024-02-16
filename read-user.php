@@ -10,21 +10,17 @@
 
     <?php
     if ($_SESSION["level"] != "admin") {
-        // jika di sesi ini levelnya bukan admin, akses ditolak //
         echo "Anda tidak dapat mengakses halaman ini";
         exit;
     }
 
     require "koneksi.php";
 
-    // id diambil dari tombol Lihat yang ditekan di user.php //
     $id = $_GET["id"];
 
-    // cari user yang memiliki id tersebut //
     $sql = "SELECT * FROM user WHERE id = '$id'";
     $query = mysqli_query($koneksi, $sql);
 
-    // ambil data user //
     $user = mysqli_fetch_array($query);
     ?>
 
@@ -32,7 +28,6 @@
         <form action="update-user.php" method="POST">
             <h1> Lihat User </h1>
 
-            <!-- id dan password lama user disembunyikan untuk keperluan update -->
             <input type="hidden" name="id" value="<?= $id ?>">
             <input type="hidden" name="oldf_password" value="<?= $user["password"] ?>">
 

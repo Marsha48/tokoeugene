@@ -1,9 +1,7 @@
  <?php
 
-    session_start();
+   session_start();
 
-    // sesi di akhir
-    session_destroy();
+   session_destroy();
 
-    // pindah ke halaman login //
-    header("location: login.php ");
+   header("location: login.php ");

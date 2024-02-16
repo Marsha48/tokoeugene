@@ -9,14 +9,11 @@
     <?php include "menu.php"; ?>
 
     <?php
-    // halaman ini boleh diakses oleh semua level
 
     require "koneksi.php";
 
-    // id diambil dari tombol Lihat yang ditekan di barang.php
     $id = $_GET["id"];
 
-    // cari barang yang memiliki id tersebut
     $sql = "SELECT * FROM barang WHERE id = '$id'";
     $query = mysqli_query($koneksi, $sql);
 
@@ -28,7 +25,6 @@
         <form action="update-barang.php" method="POST">
             <h1>Lihat Barang</h1>
 
-            <!-- id barang disembunyikan untuk keperluan update -->
             <input type="hidden" name="id" value="<?= $id ?>">
 
             <table>

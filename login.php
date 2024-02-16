@@ -2,28 +2,42 @@
 <html>
 
 <head>
-    <title> halaman login </title>
+    <title>Halaman Login</title>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+    <link href='style.css' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
     <form action="validasi.php" method="POST">
-        <h1> selamat datang ! </h1>
-        <table>
-            <tr>
-                <td> username </td>
-                <td> <input type="text" name="username"> </td>
-            </tr>
-            <tr>
-                <td> password </td>
-                <td> <input type="password" name="password"> </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <button type="submit">LOGIN</button>
-                    <button type="reset">CLEAR</button>
-                </td>
-            </tr>
-        </table>
+
+        <div class="login">
+            <div class="login-header">
+                <h1>Login kuy!</h1>
+            </div>
+            <div class="login-form">
+                <h3>Username:</h3>
+                <input type="text" placeholder="Username" name="username" /><br>
+                <h3>Password:</h3>
+                <input type="password" placeholder="Password" name="password" />
+                <br>
+                <input type="submit" value="Login" class="login-button" />
+                <br>
+            </div>
+        </div>
+    </form>
+    <script>
+        $('.error-page').hide(0);
+
+        $('.login-button , .no-access').click(function() {
+            $('.login').slideUp(500);
+            $('.error-page').slideDown(1000);
+        });
+
+        $('.try-again').click(function() {
+            $('.error-page').hide(0);
+            $('.login').slideDown(1000);
+        });
+    </script>
 </body>
 
 </html>

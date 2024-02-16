@@ -5,7 +5,7 @@
     <title> HOME </title>
     <style>
         body {
-            background: url('https://media.istockphoto.com/id/924991234/id/vektor/pegunungan-dengan-gaya-jepang-ilustrasi-lukisan-tangan-cat-air.jpg?s=1024x1024&w=is&k=20&c=FWXlUrEwRIcHyLXLIuunaSvD35wIxd8Odx-CYJMYRi8=');
+            background: url('https://i.pinimg.com/736x/24/fb/c7/24fbc7456f887e939e863325418494d4.jpg');
         }
     </style>
 </head>
